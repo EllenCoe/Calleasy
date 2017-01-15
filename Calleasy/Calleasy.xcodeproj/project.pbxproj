@@ -15,6 +15,7 @@
 		EF68333A1DB7D17A0018DDD4 /* CalleasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6833391DB7D17A0018DDD4 /* CalleasyTests.swift */; };
 		EF6833451DB7D17A0018DDD4 /* CalleasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6833441DB7D17A0018DDD4 /* CalleasyUITests.swift */; };
 		EFD305D71E2BF64600D50B79 /* contactsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD305D61E2BF64600D50B79 /* contactsCellTableViewCell.swift */; };
+		EFD305D91E2BF7D800D50B79 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD305D81E2BF7D800D50B79 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		EF6833441DB7D17A0018DDD4 /* CalleasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalleasyUITests.swift; sourceTree = "<group>"; };
 		EF6833461DB7D17A0018DDD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFD305D61E2BF64600D50B79 /* contactsCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contactsCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		EFD305D81E2BF7D800D50B79 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		EF6833181DB7D17A0018DDD4 = {
 			isa = PBXGroup;
 			children = (
+				EFD305D81E2BF7D800D50B79 /* Default-568h@2x.png */,
 				EF6833231DB7D17A0018DDD4 /* Calleasy */,
 				EF6833381DB7D17A0018DDD4 /* CalleasyTests */,
 				EF6833431DB7D17A0018DDD4 /* CalleasyUITests */,
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF68332F1DB7D17A0018DDD4 /* LaunchScreen.storyboard in Resources */,
+				EFD305D91E2BF7D800D50B79 /* Default-568h@2x.png in Resources */,
 				EF68332C1DB7D17A0018DDD4 /* Assets.xcassets in Resources */,
 				EF68332A1DB7D17A0018DDD4 /* Main.storyboard in Resources */,
 			);
