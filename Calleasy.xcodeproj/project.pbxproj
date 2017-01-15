@@ -14,7 +14,7 @@
 		EF68332F1DB7D17A0018DDD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF68332D1DB7D17A0018DDD4 /* LaunchScreen.storyboard */; };
 		EF68333A1DB7D17A0018DDD4 /* CalleasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6833391DB7D17A0018DDD4 /* CalleasyTests.swift */; };
 		EF6833451DB7D17A0018DDD4 /* CalleasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6833441DB7D17A0018DDD4 /* CalleasyUITests.swift */; };
-		EF6833551DB992CE0018DDD4 /* contactsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6833541DB992CE0018DDD4 /* contactsCellTableViewCell.swift */; };
+		EFD305D71E2BF64600D50B79 /* contactsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD305D61E2BF64600D50B79 /* contactsCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		EF6833401DB7D17A0018DDD4 /* CalleasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalleasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6833441DB7D17A0018DDD4 /* CalleasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalleasyUITests.swift; sourceTree = "<group>"; };
 		EF6833461DB7D17A0018DDD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF6833541DB992CE0018DDD4 /* contactsCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = contactsCellTableViewCell.swift; path = ../contactsCellTableViewCell.swift; sourceTree = "<group>"; };
+		EFD305D61E2BF64600D50B79 /* contactsCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contactsCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +99,10 @@
 		EF6833231DB7D17A0018DDD4 /* Calleasy */ = {
 			isa = PBXGroup;
 			children = (
-				EF6833541DB992CE0018DDD4 /* contactsCellTableViewCell.swift */,
 				EF6833241DB7D17A0018DDD4 /* AppDelegate.swift */,
 				EF6833261DB7D17A0018DDD4 /* ViewController.swift */,
 				EF6833281DB7D17A0018DDD4 /* Main.storyboard */,
+				EFD305D61E2BF64600D50B79 /* contactsCellTableViewCell.swift */,
 				EF68332B1DB7D17A0018DDD4 /* Assets.xcassets */,
 				EF68332D1DB7D17A0018DDD4 /* LaunchScreen.storyboard */,
 				EF6833301DB7D17A0018DDD4 /* Info.plist */,
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF6833551DB992CE0018DDD4 /* contactsCellTableViewCell.swift in Sources */,
+				EFD305D71E2BF64600D50B79 /* contactsCellTableViewCell.swift in Sources */,
 				EF6833271DB7D17A0018DDD4 /* ViewController.swift in Sources */,
 				EF6833251DB7D17A0018DDD4 /* AppDelegate.swift in Sources */,
 			);
