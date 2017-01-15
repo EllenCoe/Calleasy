@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Calleasy.xcscheme</key>
+		<key>calling.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>EF6833201DB7D17A0018DDD4</key>
+		<key>EFD305E21E2BFA6200D50B79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF6833341DB7D17A0018DDD4</key>
+		<key>EFD305F61E2BFA6200D50B79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF68333F1DB7D17A0018DDD4</key>
+		<key>EFD306011E2BFA6200D50B79</key>
 		<dict>
 			<key>primary</key>
 			<true/>

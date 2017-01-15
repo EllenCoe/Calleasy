@@ -1,15 +1,15 @@
 //
-//  CalleasyTests.swift
-//  CalleasyTests
+//  callingTests.swift
+//  callingTests
 //
-//  Created by Ellen Coelho on 19/10/16.
-//  Copyright © 2016 Ellen Coelho. All rights reserved.
+//  Created by Ellen Coelho on 15/01/17.
+//  Copyright © 2017 Ellen Coelho. All rights reserved.
 //
 
 import XCTest
-@testable import Calleasy
+@testable import calling
 
-class CalleasyTests: XCTestCase {
+class callingTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

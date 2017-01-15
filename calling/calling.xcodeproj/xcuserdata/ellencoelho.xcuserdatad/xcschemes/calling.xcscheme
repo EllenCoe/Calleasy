@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF6833201DB7D17A0018DDD4"
-               BuildableName = "Calleasy.app"
-               BlueprintName = "Calleasy"
-               ReferencedContainer = "container:Calleasy.xcodeproj">
+               BlueprintIdentifier = "EFD305E21E2BFA6200D50B79"
+               BuildableName = "calling.app"
+               BlueprintName = "calling"
+               ReferencedContainer = "container:calling.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF6833341DB7D17A0018DDD4"
-               BuildableName = "CalleasyTests.xctest"
-               BlueprintName = "CalleasyTests"
-               ReferencedContainer = "container:Calleasy.xcodeproj">
+               BlueprintIdentifier = "EFD305F61E2BFA6200D50B79"
+               BuildableName = "callingTests.xctest"
+               BlueprintName = "callingTests"
+               ReferencedContainer = "container:calling.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF68333F1DB7D17A0018DDD4"
-               BuildableName = "CalleasyUITests.xctest"
-               BlueprintName = "CalleasyUITests"
-               ReferencedContainer = "container:Calleasy.xcodeproj">
+               BlueprintIdentifier = "EFD306011E2BFA6200D50B79"
+               BuildableName = "callingUITests.xctest"
+               BlueprintName = "callingUITests"
+               ReferencedContainer = "container:calling.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EF6833201DB7D17A0018DDD4"
-            BuildableName = "Calleasy.app"
-            BlueprintName = "Calleasy"
-            ReferencedContainer = "container:Calleasy.xcodeproj">
+            BlueprintIdentifier = "EFD305E21E2BFA6200D50B79"
+            BuildableName = "calling.app"
+            BlueprintName = "calling"
+            ReferencedContainer = "container:calling.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EF6833201DB7D17A0018DDD4"
-            BuildableName = "Calleasy.app"
-            BlueprintName = "Calleasy"
-            ReferencedContainer = "container:Calleasy.xcodeproj">
+            BlueprintIdentifier = "EFD305E21E2BFA6200D50B79"
+            BuildableName = "calling.app"
+            BlueprintName = "calling"
+            ReferencedContainer = "container:calling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EF6833201DB7D17A0018DDD4"
-            BuildableName = "Calleasy.app"
-            BlueprintName = "Calleasy"
-            ReferencedContainer = "container:Calleasy.xcodeproj">
+            BlueprintIdentifier = "EFD305E21E2BFA6200D50B79"
+            BuildableName = "calling.app"
+            BlueprintName = "calling"
+            ReferencedContainer = "container:calling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

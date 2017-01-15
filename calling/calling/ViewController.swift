@@ -1,5 +1,13 @@
 //
 //  ViewController.swift
+//  calling
+//
+//  Created by Ellen Coelho on 15/01/17.
+//  Copyright © 2017 Ellen Coelho. All rights reserved.
+//
+
+//
+//  ViewController.swift
 //  Calleasy
 //
 //  Created by Ellen Coelho on 19/10/16.
@@ -19,7 +27,7 @@ class ContactStructModel{
         self.name = name
         self.number = number
     }
-
+    
 }
 
 class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDelegate,UITableViewDelegate {
@@ -32,7 +40,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     var arrayOfNames:[String]=[]
     
     var numberContact :String = ""
-
+    
     @IBOutlet weak var numberLabel: UILabel!
     
     var contactStore = CNContactStore()
@@ -50,30 +58,30 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         print("entrei no did load ")
         self.askForContactAccess()
         tableViewContacts.isHidden = true
-//        NotificationCenter.default.addObserver(
-//            self,
-//            selector:#selector(ViewController.getContacts),
-//            name: NSNotification.Name.UIApplicationDidBecomeActive,
-//            object: nil)
+        //        NotificationCenter.default.addObserver(
+        //            self,
+        //            selector:#selector(ViewController.getContacts),
+        //            name: NSNotification.Name.UIApplicationDidBecomeActive,
+        //            object: nil)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-                print("entrei no did appear ")
-                NotificationCenter.default.addObserver(
-                    self,
-                    selector:#selector(ViewController.getContacts),
-                    name: NSNotification.Name.UIApplicationDidBecomeActive,
-                    object: nil)
+        print("entrei no did appear ")
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(ViewController.getContacts),
+            name: NSNotification.Name.UIApplicationDidBecomeActive,
+            object: nil)
     }
-     func getContacts() {
+    func getContacts() {
         //self.askForContactAccess()
         contactsStruct = []
         arrayOfNames = []
         filteredObjectsName = []
         filtro = 0
-    
+        
         let contacts: [CNContact] = {
             let contactStore = CNContactStore()
             let keysToFetch = [
@@ -117,7 +125,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             let nome = contactOfCell.givenName
             let countOfNumber = contactOfCell.phoneNumbers.count
             var numero = "Número não encontado";
-    
+            
             if(countOfNumber > 0){
                 
                 numero = ((contactOfCell.phoneNumbers[0].value ).value(forKey: "digits") as? String)!
@@ -177,12 +185,12 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
     }
     
-
+    
     @IBAction func funcButtons(_ sender: AnyObject) {
         self.tableViewContacts.isHidden = false
         filtrandoNumeroDigitado(numeroInt: sender.tag)
         
-       
+        
     }
     
     
@@ -194,7 +202,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 let strCharactersArray = Array(item.characters)
                 if(item != ""){
                     if(strCharactersArray[0]==letra1 || strCharactersArray[0] == letra2 || strCharactersArray[0]==letra3 || strCharactersArray[0]==letra4 || strCharactersArray[0] == letra5 || strCharactersArray[0]==letra6){
-                    
+                        
                         filteredObjectsName.append(item)
                         
                     }}
@@ -210,16 +218,16 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 
                 if(filtro < strCharactersArray.count){
                     let character = strCharactersArray[filtro]
-                
-                    if(character  != letra1 && character != letra2 && character != letra3 && character != letra4 && character != letra5 && character != letra6){
                     
-                    filteredObjectsName = filteredObjectsName.filter(){$0 != item}
-                }
+                    if(character  != letra1 && character != letra2 && character != letra3 && character != letra4 && character != letra5 && character != letra6){
+                        
+                        filteredObjectsName = filteredObjectsName.filter(){$0 != item}
+                    }
                 }else{
                     filteredObjectsName = filteredObjectsName.filter(){$0 != item}
                 }}
             filtro = filtro + 1
-           // print("filtro",filtro)
+            // print("filtro",filtro)
             print(filteredObjectsName)
         }
         if(filteredObjectsName.count == 0){
@@ -239,10 +247,10 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 
                 let strCharactersArray = Array(item.characters)
                 if(item != ""){
-                if(strCharactersArray[0]==letra1 || strCharactersArray[0] == letra2 || strCharactersArray[0]==letra3 || strCharactersArray[0]==letra4 || strCharactersArray[0] == letra5 || strCharactersArray[0]==letra6 || strCharactersArray[0] == letra7 || strCharactersArray[0]==letra8 ){
-                    
-                    filteredObjectsName.append(item)
-                    
+                    if(strCharactersArray[0]==letra1 || strCharactersArray[0] == letra2 || strCharactersArray[0]==letra3 || strCharactersArray[0]==letra4 || strCharactersArray[0] == letra5 || strCharactersArray[0]==letra6 || strCharactersArray[0] == letra7 || strCharactersArray[0]==letra8 ){
+                        
+                        filteredObjectsName.append(item)
+                        
                     }}
                 
                 filtro = 1
@@ -254,12 +262,12 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 
                 let strCharactersArray = Array(item.characters)
                 if(filtro < strCharactersArray.count){
-                let character = strCharactersArray[filtro]
-                
-                if(character  != letra1 && character != letra2 && character != letra3 && character != letra4 && character != letra5 && character != letra6 && character != letra7 && character != letra8){
+                    let character = strCharactersArray[filtro]
                     
-                    filteredObjectsName = filteredObjectsName.filter(){$0 != item}
-                }
+                    if(character  != letra1 && character != letra2 && character != letra3 && character != letra4 && character != letra5 && character != letra6 && character != letra7 && character != letra8){
+                        
+                        filteredObjectsName = filteredObjectsName.filter(){$0 != item}
+                    }
                 }else{
                     filteredObjectsName = filteredObjectsName.filter(){$0 != item}
                 }}
@@ -284,10 +292,10 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         }
     }
     
-   internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = self.tableViewContacts.dequeueReusableCell(withIdentifier: "identCell", for: indexPath) as! contactsCellTableViewCell
-
+        
         
         if( filteredObjectsName == []){
             if (filtro == 0) {
@@ -311,11 +319,11 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             for contato in contactsStruct{
                 if(contato.name == filteredObjectsName[indexPath.row]){
                     numberContact = contato.number
-                
+                    
                     numberLabel.text = numberContact
-                
+                    
                     digitei = numberContact
-                
+                    
                 }
             }
         }
@@ -402,27 +410,27 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             print("erro")
             
         }
-//        if numberLabel.text == ""{
-//            filteredObjectsName = []
-//        
-//        }
+        //        if numberLabel.text == ""{
+        //            filteredObjectsName = []
+        //
+        //        }
         numberLabel.text = digitei
         
         tableViewContacts.reloadData()
         
-       //return filteredObjectsName
+        //return filteredObjectsName
     }
     
     @IBAction func buttonCall(_ sender: AnyObject) {
         let ligando : String = numberLabel.text!
-
+        
         let url = URL(string: "tel://" + ligando)
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url!, options: [:], completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url!)
         }
-       
+        
         
     }
     
@@ -437,7 +445,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         filteredObjectsName = []
         //while index < (strCharactersArray.count - 1)
         
-         digitei = ""
+        digitei = ""
         if(selectedName == false){
             for item in strCharactersArray{
                 
@@ -449,23 +457,24 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                     
                     filtrandoNumeroDigitado(numeroInt: numeroDigitadoInteiro)
                     //numberLabel.text = digitei
-            
+                    
                     index = index + 1
                 }
                 
             }}
         
-            let stringNumber = String(stringChar)
+        let stringNumber = String(stringChar)
         
-            digitei = stringNumber
+        digitei = stringNumber
         
-            print("O que eu havia digitado",digitei)
+        print("O que eu havia digitado",digitei)
         
-            print("Objetos filtrados",filteredObjectsName)
+        print("Objetos filtrados",filteredObjectsName)
         
-            numberLabel.text = digitei
+        numberLabel.text = digitei
         
-            tableViewContacts.reloadData()
+        tableViewContacts.reloadData()
         
     }
 }
+
