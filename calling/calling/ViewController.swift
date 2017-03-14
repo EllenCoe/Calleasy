@@ -58,24 +58,25 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         print("entrei no did load ")
         self.askForContactAccess()
         tableViewContacts.isHidden = true
-        //        NotificationCenter.default.addObserver(
-        //            self,
-        //            selector:#selector(ViewController.getContacts),
-        //            name: NSNotification.Name.UIApplicationDidBecomeActive,
-        //            object: nil)
+                NotificationCenter.default.addObserver(
+                    self,
+                    selector:#selector(ViewController.getContacts),
+                    name: NSNotification.Name.UIApplicationDidBecomeActive,
+                    object: nil)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         print("entrei no did appear ")
-        NotificationCenter.default.addObserver(
-            self,
-            selector:#selector(ViewController.getContacts),
-            name: NSNotification.Name.UIApplicationDidBecomeActive,
-            object: nil)
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector:#selector(ViewController.getContacts),
+//            name: NSNotification.Name.UIApplicationDidBecomeActive,
+//            object: nil)
     }
     func getContacts() {
+        print("entrei na funçao get contacts")
         //self.askForContactAccess()
         contactsStruct = []
         arrayOfNames = []
@@ -92,6 +93,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 CNContactThumbnailImageDataKey] as [Any]
             
             // Get all the containers
+           
             var allContainers: [CNContainer] = []
             do {
                 allContainers = try contactStore.containers(matching: nil)
@@ -116,28 +118,62 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             return results
         }()
         
-        print("Numero de contato",contacts.count)
+        //print("Numero de contato",contacts.count)
         
         var index = 0;
         
+    
         for contactOfCell in contacts {
             
-            let nome = contactOfCell.givenName
+            let nomeGiven = contactOfCell.givenName
+            var nome = nomeGiven
             let countOfNumber = contactOfCell.phoneNumbers.count
-            var numero = "Número não encontado";
+            var numero = "Número não encontrado";
+            var indexCountNumber = 0;
             
-            if(countOfNumber > 0){
+            print("NUMERO DE CONTATOS POR CONTATO",countOfNumber)
+            
+            while(countOfNumber > 0 && indexCountNumber < countOfNumber){
                 
-                numero = ((contactOfCell.phoneNumbers[0].value ).value(forKey: "digits") as? String)!
+                numero = ((contactOfCell.phoneNumbers[indexCountNumber].value ).value(forKey: "digits") as? String)!
+                
+                if(countOfNumber > 1){
+                    let pLabel = contactOfCell.phoneNumbers[0].label
+                    
+                    
+                    let character: Character = "!"
+                    
+                    if(pLabel == nil) {
+                        //print("nil")
+                        
+                    }else if (pLabel?.characters.contains(character))!{
+                        
+                       // print("\(pLabel) contains \(character).")
+                        let pLabel2 = pLabel?.characters.split(separator: "<").map(String.init)
+                        let pLabel3 = pLabel2?[1].characters.split(separator: ">").map(String.init) //[Mobile, >!$_]
+                        nome = nomeGiven + " " + (pLabel3?[0])!
+
+                    }else{
+                        
+                       // print("\(pLabel) doesn't contain \(character).")
+                        nome = nomeGiven + " " + pLabel!
+                        
+                    }
+                }
+                
+                if(numero != "Número não encontrado"){
+                    let contato = ContactStructModel(name:nome,number: numero)
+                    
+                    self.contactsStruct.append(contato)
+                    print("Contato " + String(index) + " " + contactsStruct[index].name + " " + contactsStruct[index].number)
+                    //print(contactsStruct[index].number)
+                    index = index + 1;
+                }
+                
+                indexCountNumber = indexCountNumber + 1
+                
             }
             
-            
-            let contato = ContactStructModel(name:nome,number: numero)
-            
-            self.contactsStruct.append(contato)
-            print("Contato " + String(index) + " " + contactsStruct[index].name + contactsStruct[index].number)
-            //print(contactsStruct[index].number)
-            index = index + 1;
             
         }
         
@@ -358,6 +394,8 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         case 1:
             print("Digitei 1")
             digitei = digitei + "1"
+            tableViewContacts.isHidden = true
+
             break
         case 2:
             print("Digitei 2 filtrar ABC ")
@@ -472,7 +510,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         print("Objetos filtrados",filteredObjectsName)
         
         numberLabel.text = digitei
-        
+        tableViewContacts.isHidden = false
         tableViewContacts.reloadData()
         
     }
