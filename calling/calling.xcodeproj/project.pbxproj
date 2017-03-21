@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF7E07E11E78756500C87D14 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E07E01E78756500C87D14 /* ContactViewController.swift */; };
 		EFD305E71E2BFA6200D50B79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD305E61E2BFA6200D50B79 /* AppDelegate.swift */; };
 		EFD305E91E2BFA6200D50B79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD305E81E2BFA6200D50B79 /* ViewController.swift */; };
 		EFD305EE1E2BFA6200D50B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD305ED1E2BFA6200D50B79 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF7E07E01E78756500C87D14 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		EFD305E31E2BFA6200D50B79 /* calling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD305E61E2BFA6200D50B79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD305E81E2BFA6200D50B79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				EFD305E61E2BFA6200D50B79 /* AppDelegate.swift */,
 				EFD305E81E2BFA6200D50B79 /* ViewController.swift */,
 				EFD306161E2BFB4600D50B79 /* Main.storyboard */,
+				EF7E07E01E78756500C87D14 /* ContactViewController.swift */,
 				EFD306181E2BFDAF00D50B79 /* contactsCellTableViewCell.swift */,
 				EFD305ED1E2BFA6200D50B79 /* Assets.xcassets */,
 				EFD305EF1E2BFA6200D50B79 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFD306191E2BFDAF00D50B79 /* contactsCellTableViewCell.swift in Sources */,
+				EF7E07E11E78756500C87D14 /* ContactViewController.swift in Sources */,
 				EFD305E91E2BFA6200D50B79 /* ViewController.swift in Sources */,
 				EFD305E71E2BFA6200D50B79 /* AppDelegate.swift in Sources */,
 			);

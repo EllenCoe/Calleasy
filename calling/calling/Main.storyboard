@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NKf-Xc-VOu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Keyboard-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calleasy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="calling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,123 +23,208 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMa-db-Xef">
-                                <rect key="frame" x="67" y="282" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="1"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fundo-Bolinhas" translatesAutoresizingMaskIntoConstraints="NO" id="868-s9-4vN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMa-db-Xef">
+                                <rect key="frame" x="57" y="223" width="67" height="66"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="1">
+                                            <attributes>
+                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3P4-gi-r59"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txu-aK-ARh">
-                                <rect key="frame" x="165" y="282" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="2 (ABC)">
-                                    <color key="titleColor" red="0.078623466193675995" green="0.51253354549407959" blue="0.9986613392829895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txu-aK-ARh">
+                                <rect key="frame" x="155" y="223" width="67" height="66"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="txu-aK-ARh" secondAttribute="height" multiplier="1:1" id="TdL-O2-ETJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="2">
+                                            <attributes>
+                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdm-9H-a1n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFO-qV-hhi">
-                                <rect key="frame" x="271" y="282" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="3 (DEF)"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XFO-qV-hhi">
+                                <rect key="frame" x="243" y="223" width="67" height="66"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.4350415555217248" green="0.43934889765560325" blue="0.43934889765560325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="3">
+                                            <attributes>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bBe-Wz-cOJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYn-M3-lRz">
-                                <rect key="frame" x="53" y="332" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="4 (GHI)"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYn-M3-lRz">
+                                <rect key="frame" x="57" y="295" width="67" height="67"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="4 ">
+                                            <attributes>
+                                                <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qrj-91-aX1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7c-b6-mSA">
-                                <rect key="frame" x="165" y="338" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="5 (JKL)"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7c-b6-mSA">
+                                <rect key="frame" x="155" y="295" width="67" height="67"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="5">
+                                            <attributes>
+                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCa-li-wXF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-46-hjI">
-                                <rect key="frame" x="262" y="332" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="6 (MNO)"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-46-hjI">
+                                <rect key="frame" x="243" y="295" width="67" height="67"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="6 ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdG-7L-viQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbd-VJ-iea">
-                                <rect key="frame" x="53" y="392" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="7 (PQRS)"/>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbd-VJ-iea">
+                                <rect key="frame" x="57" y="370" width="67" height="66"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="7">
+                                            <attributes>
+                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvb-R8-r8d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-Dz-nrp">
-                                <rect key="frame" x="165" y="392" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="8 (TUV)"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-Dz-nrp">
+                                <rect key="frame" x="155" y="370" width="67" height="66"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="8">
+                                            <attributes>
+                                                <color key="NSColor" red="0.47445547580718994" green="0.4745410680770874" blue="0.47445005178451538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMO-qX-w8H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-9D-d2f">
-                                <rect key="frame" x="262" y="386" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="9 (WXYZ)"/>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-9D-d2f">
+                                <rect key="frame" x="243" y="370" width="67" height="66"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="9">
+                                            <attributes>
+                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="USn-bl-pJw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCU-pE-Vak">
-                                <rect key="frame" x="169" y="461" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="0"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCU-pE-Vak">
+                                <rect key="frame" x="155" y="445" width="67" height="67"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="botao">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="0">
+                                            <attributes>
+                                                <font key="NSFont" size="25" name="Noteworthy-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="funcButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qmo-mL-5fw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkX-5p-Qqv">
-                                <rect key="frame" x="82" y="49" width="211" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Label">
-                                        <attributes>
-                                            <color key="NSColor" red="0.36677109771573602" green="0.36677109771573602" blue="0.36677109771573602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="22" name="Titillium-RegularUpright"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <color key="highlightedColor" red="0.48510866116751272" green="0.48510866116751272" blue="0.48510866116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="46" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vI-lu-zGJ">
-                                <rect key="frame" x="16" y="111" width="343" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="46" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vI-lu-zGJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="134"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.7870003172588832" green="0.7870003172588832" blue="0.7870003172588832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="identCell" rowHeight="46" id="HBA-hi-ATf" customClass="contactsCellTableViewCell" customModule="Calleasy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="46"/>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="identCell" rowHeight="46" id="HBA-hi-ATf" customClass="contactsCellTableViewCell" customModule="calling" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBA-hi-ATf" id="Idp-4c-gkj">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka2-uH-e54">
-                                                    <rect key="frame" x="16" y="11" width="312" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka2-uH-e54">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                                    <color key="tintColor" red="0.58770225253807107" green="0.58770225253807107" blue="0.58770225253807107" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
-                                                                <color key="NSColor" red="0.61302347715736039" green="0.61302347715736039" blue="0.61302347715736039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="21" name=".AppleSystemUIFont"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
@@ -146,8 +233,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ka2-uH-e54" firstAttribute="height" secondItem="Idp-4c-gkj" secondAttribute="height" id="5g3-LM-4kC"/>
+                                                <constraint firstItem="ka2-uH-e54" firstAttribute="centerX" secondItem="Idp-4c-gkj" secondAttribute="centerX" id="ECM-wf-CD4"/>
+                                                <constraint firstItem="ka2-uH-e54" firstAttribute="centerY" secondItem="Idp-4c-gkj" secondAttribute="centerY" id="IZ4-4G-3lq"/>
+                                                <constraint firstItem="ka2-uH-e54" firstAttribute="width" secondItem="Idp-4c-gkj" secondAttribute="width" id="lUY-49-fSz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.95907360406091358" green="0.95907360406091358" blue="0.95907360406091358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="nameContact" destination="ka2-uH-e54" id="FZB-G4-KYs"/>
                                         </connections>
@@ -158,27 +250,230 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Fst-Eo-w1L"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxk-9x-goq">
-                                <rect key="frame" x="288" y="44" width="71" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Delete"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxk-9x-goq">
+                                <rect key="frame" x="329" y="178" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dxk-9x-goq" secondAttribute="height" multiplier="1:1" id="2fk-Tf-FYr"/>
+                                </constraints>
+                                <state key="normal" title="Delete" image="Icone Del"/>
                                 <connections>
                                     <action selector="deleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tgx-46-rha"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4Q-u7-hKW">
-                                <rect key="frame" x="159" y="528" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4Q-u7-hKW">
+                                <rect key="frame" x="155" y="512" width="67" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Ligar"/>
+                                <state key="normal" backgroundImage="Icone call"/>
                                 <connections>
                                     <action selector="buttonCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKC-SO-s40"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkX-5p-Qqv">
+                                <rect key="frame" x="48" y="174" width="281" height="39"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="0.52514276649746194" green="0.52514276649746194" blue="0.52514276649746194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="Noteworthy-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.48510866116751272" green="0.48510866116751272" blue="0.48510866116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I16-5A-JcG">
+                                <rect key="frame" x="243" y="264" width="66" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="DEF">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6301670438515744" green="0.63640632151347121" blue="0.63640632151347121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="12" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.44146196553217565" green="0.44583287608199917" blue="0.44583287608199917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVM-0l-9kc">
+                                <rect key="frame" x="57" y="334" width="67" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="GHI">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6301670438515744" green="0.63640632151347121" blue="0.63640632151347121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.4414619655" green="0.4458328761" blue="0.4458328761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPx-mO-Udw">
+                                <rect key="frame" x="57" y="406" width="67" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="PQRS">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6301670438515744" green="0.63640632151347121" blue="0.63640632151347121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.4414619655" green="0.4458328761" blue="0.4458328761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPZ-1m-agA">
+                                <rect key="frame" x="155" y="406" width="67" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="TUV">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6301670438515744" green="0.63640632151347121" blue="0.63640632151347121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.4414619655" green="0.4458328761" blue="0.4458328761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yT-WX-eLC">
+                                <rect key="frame" x="155" y="334" width="67" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="JKL">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6301670438515744" green="0.63640632151347121" blue="0.63640632151347121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.4414619655" green="0.4458328761" blue="0.4458328761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plr-hA-n1a">
+                                <rect key="frame" x="244" y="334" width="66" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="MNO">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6301670438515744" green="0.63640632151347121" blue="0.63640632151347121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.4414619655" green="0.4458328761" blue="0.4458328761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikw-3L-5x2">
+                                <rect key="frame" x="155" y="263" width="67" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="ABC">
+                                        <attributes>
+                                            <color key="NSColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.4414619655" green="0.4458328761" blue="0.4458328761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5c-X5-mzp">
+                                <rect key="frame" x="244" y="406" width="66" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="WXYZ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6301670438515744" green="0.63640632151347121" blue="0.63640632151347121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="Noteworthy-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.4414619655" green="0.4458328761" blue="0.4458328761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99276253172588835" green="0.99276253172588835" blue="0.99276253172588835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="txu-aK-ARh" firstAttribute="leading" secondItem="rMa-db-Xef" secondAttribute="trailing" multiplier="1.25" id="02V-ws-UP6"/>
+                            <constraint firstItem="5vI-lu-zGJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="07l-61-UgI"/>
+                            <constraint firstItem="GkX-5p-Qqv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.058" id="0Cg-Vf-1Bw"/>
+                            <constraint firstItem="8mS-9D-d2f" firstAttribute="width" secondItem="TRe-46-hjI" secondAttribute="width" id="1Ga-5z-Zxc"/>
+                            <constraint firstItem="txu-aK-ARh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="2Gz-MG-uB6"/>
+                            <constraint firstItem="TRe-46-hjI" firstAttribute="height" secondItem="XFO-qV-hhi" secondAttribute="height" id="3PU-pC-2XV"/>
+                            <constraint firstItem="H7c-b6-mSA" firstAttribute="centerX" secondItem="txu-aK-ARh" secondAttribute="centerX" id="4hx-To-75f"/>
+                            <constraint firstItem="rMa-db-Xef" firstAttribute="centerY" secondItem="txu-aK-ARh" secondAttribute="centerY" id="5RQ-6v-7Ma"/>
+                            <constraint firstItem="H4Q-u7-hKW" firstAttribute="width" secondItem="wCU-pE-Vak" secondAttribute="width" id="5gn-eL-oJB"/>
+                            <constraint firstItem="gVM-0l-9kc" firstAttribute="centerX" secondItem="LYn-M3-lRz" secondAttribute="centerX" id="7Fh-HY-Xjg"/>
+                            <constraint firstItem="LYn-M3-lRz" firstAttribute="centerX" secondItem="rMa-db-Xef" secondAttribute="centerX" id="7Yr-IA-aMS"/>
+                            <constraint firstItem="H4Q-u7-hKW" firstAttribute="height" secondItem="wCU-pE-Vak" secondAttribute="height" id="7qQ-Mx-Wpu"/>
+                            <constraint firstItem="8mS-9D-d2f" firstAttribute="top" secondItem="TRe-46-hjI" secondAttribute="bottom" multiplier="1.02" id="8yU-UE-1G0"/>
+                            <constraint firstItem="dxk-9x-goq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.085" id="98N-X7-3mn"/>
+                            <constraint firstItem="H4Q-u7-hKW" firstAttribute="centerX" secondItem="wCU-pE-Vak" secondAttribute="centerX" id="9OE-8p-0Az"/>
+                            <constraint firstItem="PPZ-1m-agA" firstAttribute="width" secondItem="Oef-Dz-nrp" secondAttribute="width" id="APd-Ex-TtL"/>
+                            <constraint firstItem="H7c-b6-mSA" firstAttribute="height" secondItem="txu-aK-ARh" secondAttribute="height" id="FNL-rI-kKX"/>
+                            <constraint firstItem="Plr-hA-n1a" firstAttribute="bottom" secondItem="TRe-46-hjI" secondAttribute="bottom" multiplier="0.98" id="GPk-hc-qGM"/>
+                            <constraint firstItem="4yT-WX-eLC" firstAttribute="width" secondItem="H7c-b6-mSA" secondAttribute="width" id="Gst-Jp-o2t"/>
+                            <constraint firstItem="8mS-9D-d2f" firstAttribute="height" secondItem="TRe-46-hjI" secondAttribute="height" id="Hl0-96-9Jt"/>
+                            <constraint firstItem="868-s9-4vN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IXF-7b-w4V"/>
+                            <constraint firstItem="H7c-b6-mSA" firstAttribute="width" secondItem="txu-aK-ARh" secondAttribute="width" id="JZU-8Q-IWU"/>
+                            <constraint firstItem="ikw-3L-5x2" firstAttribute="width" secondItem="txu-aK-ARh" secondAttribute="width" id="Jef-zk-avX"/>
+                            <constraint firstItem="I16-5A-JcG" firstAttribute="width" secondItem="XFO-qV-hhi" secondAttribute="width" id="KF2-fc-sQs"/>
+                            <constraint firstItem="ikw-3L-5x2" firstAttribute="bottom" secondItem="txu-aK-ARh" secondAttribute="bottom" multiplier="0.98" id="KHL-7N-19K"/>
+                            <constraint firstItem="I16-5A-JcG" firstAttribute="bottom" secondItem="XFO-qV-hhi" secondAttribute="bottom" multiplier="0.98" id="Kl4-fw-INy"/>
+                            <constraint firstItem="gVM-0l-9kc" firstAttribute="width" secondItem="LYn-M3-lRz" secondAttribute="width" id="MNn-fk-B0T"/>
+                            <constraint firstItem="I16-5A-JcG" firstAttribute="centerX" secondItem="XFO-qV-hhi" secondAttribute="centerX" id="OTx-Tx-X8M"/>
+                            <constraint firstItem="wCU-pE-Vak" firstAttribute="height" secondItem="Oef-Dz-nrp" secondAttribute="height" id="OUz-s3-jFK"/>
+                            <constraint firstItem="TRe-46-hjI" firstAttribute="top" secondItem="XFO-qV-hhi" secondAttribute="bottom" multiplier="1.02" id="OXZ-XA-wPZ"/>
+                            <constraint firstItem="ikw-3L-5x2" firstAttribute="centerX" secondItem="txu-aK-ARh" secondAttribute="centerX" id="P7q-0m-tJC"/>
+                            <constraint firstItem="XFO-qV-hhi" firstAttribute="centerY" secondItem="txu-aK-ARh" secondAttribute="centerY" id="PeQ-r5-HQ5"/>
+                            <constraint firstItem="5vI-lu-zGJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QSU-C6-hHv"/>
+                            <constraint firstItem="dxk-9x-goq" firstAttribute="centerY" secondItem="GkX-5p-Qqv" secondAttribute="centerY" id="ROK-Eh-tiF"/>
+                            <constraint firstItem="XFO-qV-hhi" firstAttribute="leading" secondItem="txu-aK-ARh" secondAttribute="trailing" multiplier="1.1" id="SYB-LO-aT5"/>
+                            <constraint firstItem="868-s9-4vN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="TQ1-bi-cZl"/>
+                            <constraint firstItem="PPZ-1m-agA" firstAttribute="centerX" secondItem="Oef-Dz-nrp" secondAttribute="centerX" id="TeG-re-kQa"/>
+                            <constraint firstItem="Plr-hA-n1a" firstAttribute="width" secondItem="TRe-46-hjI" secondAttribute="width" id="V4C-iJ-WJF"/>
+                            <constraint firstItem="yPx-mO-Udw" firstAttribute="width" secondItem="mbd-VJ-iea" secondAttribute="width" id="VHR-a0-7G7"/>
+                            <constraint firstItem="Oef-Dz-nrp" firstAttribute="centerX" secondItem="H7c-b6-mSA" secondAttribute="centerX" id="Vr9-k2-8lp"/>
+                            <constraint firstItem="mbd-VJ-iea" firstAttribute="top" secondItem="LYn-M3-lRz" secondAttribute="bottom" multiplier="1.02" id="W30-er-h81"/>
+                            <constraint firstItem="868-s9-4vN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XTW-C7-1pE"/>
+                            <constraint firstItem="gVM-0l-9kc" firstAttribute="bottom" secondItem="LYn-M3-lRz" secondAttribute="bottom" multiplier="0.98" id="Ylc-rf-9w6"/>
+                            <constraint firstItem="LYn-M3-lRz" firstAttribute="width" secondItem="rMa-db-Xef" secondAttribute="width" id="ZEZ-62-qVw"/>
+                            <constraint firstItem="yPx-mO-Udw" firstAttribute="centerX" secondItem="mbd-VJ-iea" secondAttribute="centerX" id="ZzG-fP-oh4"/>
+                            <constraint firstItem="E5c-X5-mzp" firstAttribute="width" secondItem="8mS-9D-d2f" secondAttribute="width" id="a0B-v4-seu"/>
+                            <constraint firstItem="wCU-pE-Vak" firstAttribute="width" secondItem="Oef-Dz-nrp" secondAttribute="width" id="a5z-VJ-xgC"/>
+                            <constraint firstItem="PPZ-1m-agA" firstAttribute="bottom" secondItem="Oef-Dz-nrp" secondAttribute="bottom" multiplier="0.98" id="adQ-sk-863"/>
+                            <constraint firstItem="yPx-mO-Udw" firstAttribute="bottom" secondItem="mbd-VJ-iea" secondAttribute="bottom" multiplier="0.98" id="cZC-6O-dVI"/>
+                            <constraint firstItem="mbd-VJ-iea" firstAttribute="height" secondItem="LYn-M3-lRz" secondAttribute="height" id="cdy-ew-KvL"/>
+                            <constraint firstItem="XFO-qV-hhi" firstAttribute="height" secondItem="txu-aK-ARh" secondAttribute="height" id="dQb-Mh-6jC"/>
+                            <constraint firstItem="dxk-9x-goq" firstAttribute="leading" secondItem="GkX-5p-Qqv" secondAttribute="trailing" id="dWO-lb-ku8"/>
+                            <constraint firstItem="Oef-Dz-nrp" firstAttribute="width" secondItem="H7c-b6-mSA" secondAttribute="width" id="e2G-zU-H86"/>
+                            <constraint firstItem="wCU-pE-Vak" firstAttribute="top" secondItem="Oef-Dz-nrp" secondAttribute="bottom" multiplier="1.02" id="e6Y-5m-rIs"/>
+                            <constraint firstItem="LYn-M3-lRz" firstAttribute="top" secondItem="rMa-db-Xef" secondAttribute="bottom" multiplier="1.02" id="eNP-l0-278"/>
+                            <constraint firstItem="GkX-5p-Qqv" firstAttribute="top" secondItem="5vI-lu-zGJ" secondAttribute="bottom" constant="20" id="fZU-IH-GA7"/>
+                            <constraint firstItem="GkX-5p-Qqv" firstAttribute="width" secondItem="868-s9-4vN" secondAttribute="width" multiplier="0.75" id="fnJ-4z-Lnl"/>
+                            <constraint firstItem="Oef-Dz-nrp" firstAttribute="height" secondItem="H7c-b6-mSA" secondAttribute="height" id="gNj-Eg-eGc"/>
+                            <constraint firstItem="5vI-lu-zGJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="gSC-PQ-V30"/>
+                            <constraint firstItem="E5c-X5-mzp" firstAttribute="centerX" secondItem="8mS-9D-d2f" secondAttribute="centerX" id="gaf-CV-gsi"/>
+                            <constraint firstItem="txu-aK-ARh" firstAttribute="top" secondItem="GkX-5p-Qqv" secondAttribute="bottom" constant="10" id="hCq-xP-cee"/>
+                            <constraint firstItem="4yT-WX-eLC" firstAttribute="bottom" secondItem="H7c-b6-mSA" secondAttribute="bottom" multiplier="0.98" id="hF5-h9-iEx"/>
+                            <constraint firstItem="TRe-46-hjI" firstAttribute="width" secondItem="XFO-qV-hhi" secondAttribute="width" id="hPv-Mc-qve"/>
+                            <constraint firstItem="Plr-hA-n1a" firstAttribute="centerX" secondItem="TRe-46-hjI" secondAttribute="centerX" id="iBI-QM-Qtx"/>
+                            <constraint firstItem="mbd-VJ-iea" firstAttribute="width" secondItem="LYn-M3-lRz" secondAttribute="width" id="ihf-Pm-kwM"/>
+                            <constraint firstItem="LYn-M3-lRz" firstAttribute="height" secondItem="rMa-db-Xef" secondAttribute="height" id="jHn-qm-tby"/>
+                            <constraint firstItem="txu-aK-ARh" firstAttribute="centerX" secondItem="868-s9-4vN" secondAttribute="centerX" id="kTZ-cU-Pwc"/>
+                            <constraint firstItem="mbd-VJ-iea" firstAttribute="centerX" secondItem="LYn-M3-lRz" secondAttribute="centerX" id="kda-hH-SkK"/>
+                            <constraint firstItem="TRe-46-hjI" firstAttribute="centerX" secondItem="XFO-qV-hhi" secondAttribute="centerX" id="mCy-c4-qLO"/>
+                            <constraint firstItem="wCU-pE-Vak" firstAttribute="centerX" secondItem="Oef-Dz-nrp" secondAttribute="centerX" id="mbh-vW-a5I"/>
+                            <constraint firstItem="Oef-Dz-nrp" firstAttribute="top" secondItem="H7c-b6-mSA" secondAttribute="bottom" multiplier="1.02" id="n55-O6-PqL"/>
+                            <constraint firstItem="XFO-qV-hhi" firstAttribute="width" secondItem="txu-aK-ARh" secondAttribute="width" id="pQg-4A-1Xr"/>
+                            <constraint firstItem="E5c-X5-mzp" firstAttribute="bottom" secondItem="8mS-9D-d2f" secondAttribute="bottom" multiplier="0.98" id="q6f-pi-Hof"/>
+                            <constraint firstItem="868-s9-4vN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="r8m-ub-WPM"/>
+                            <constraint firstItem="rMa-db-Xef" firstAttribute="height" secondItem="txu-aK-ARh" secondAttribute="height" id="rSV-Gb-VfZ"/>
+                            <constraint firstItem="5vI-lu-zGJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vRe-ah-RvZ"/>
+                            <constraint firstItem="H7c-b6-mSA" firstAttribute="top" secondItem="txu-aK-ARh" secondAttribute="bottom" multiplier="1.02" id="vkK-Rg-EWk"/>
+                            <constraint firstItem="rMa-db-Xef" firstAttribute="width" secondItem="txu-aK-ARh" secondAttribute="width" id="vx7-x7-OFo"/>
+                            <constraint firstItem="H4Q-u7-hKW" firstAttribute="top" secondItem="wCU-pE-Vak" secondAttribute="bottom" id="ykX-fd-dyR"/>
+                            <constraint firstItem="4yT-WX-eLC" firstAttribute="centerX" secondItem="H7c-b6-mSA" secondAttribute="centerX" id="zS2-fF-I9x"/>
+                            <constraint firstItem="GkX-5p-Qqv" firstAttribute="centerX" secondItem="5vI-lu-zGJ" secondAttribute="centerX" id="zXq-rH-Amf"/>
+                            <constraint firstItem="8mS-9D-d2f" firstAttribute="centerX" secondItem="TRe-46-hjI" secondAttribute="centerX" id="zfM-u8-tdb"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Keyboard" image="menu-circles" id="ndF-sg-Gzb"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="numberLabel" destination="GkX-5p-Qqv" id="nde-qT-Tfq"/>
                         <outlet property="tableViewContacts" destination="5vI-lu-zGJ" id="4PF-7U-ha1"/>
@@ -186,7 +481,128 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127.2" y="142.57871064467767"/>
+            <point key="canvasLocation" x="1509.5999999999999" y="151.57421289355324"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ux9-b7-uRj">
+            <objects>
+                <viewController id="LRC-Kt-fUq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bmR-6D-fLj"/>
+                        <viewControllerLayoutGuide type="bottom" id="CaN-3o-o9m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ae4-FH-WdW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uGc-CC-Jdb">
+                                <rect key="frame" x="0.0" y="48" width="375" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="wG1-GT-jlf">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wG1-GT-jlf" id="nGd-lG-soO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaO-7c-TdD">
+                                                    <rect key="frame" x="30" y="8" width="93" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9Z-Tq-WvC">
+                                                    <rect key="frame" x="30" y="37" width="140" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tby-AD-Gsq">
+                                                    <rect key="frame" x="260" y="8" width="91" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPL-eN-VUe">
+                                <rect key="frame" x="159" y="-1" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DA2-qq-vya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2418" y="152"/>
+        </scene>
+        <!--Contact View Controller-->
+        <scene sceneID="vgz-8X-9z9">
+            <objects>
+                <viewController id="myW-A8-ohL" customClass="ContactViewController" customModule="calling" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hft-IZ-BXl"/>
+                        <viewControllerLayoutGuide type="bottom" id="F0Z-vf-CdY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fz2-H2-o3h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbk-1R-Gb8">
+                                <rect key="frame" x="164" y="85" width="46" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="ActionContact:" destination="myW-A8-ohL" eventType="touchUpInside" id="5Za-Bm-xce"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" systemItem="contacts" id="fDe-LB-nXv"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ContactsList" destination="pbk-1R-Gb8" id="yJ4-9I-8MJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0w-q6-dI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327" y="1043"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FIq-3g-mnw">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="NKf-Xc-VOu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="663"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="VyM-ao-tlB">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Yis-Hp-PzO"/>
+                        <segue destination="myW-A8-ohL" kind="relationship" relationship="viewControllers" id="IHl-9v-vGh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWA-zC-mrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637.60000000000002" y="153.37331334332833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Fundo-Bolinhas" width="1563" height="2780"/>
+        <image name="Icone Del" width="60" height="60"/>
+        <image name="Icone call" width="60" height="60"/>
+        <image name="botao" width="141" height="141"/>
+        <image name="menu-circles" width="32" height="32"/>
+    </resources>
 </document>

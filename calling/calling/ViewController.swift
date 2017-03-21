@@ -63,10 +63,16 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                     selector:#selector(ViewController.getContacts),
                     name: NSNotification.Name.UIApplicationDidBecomeActive,
                     object: nil)
+    
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if(scrollView == tableViewContacts){
+            
+        }
+    }
     override func viewDidAppear(_ animated: Bool) {
         print("entrei no did appear ")
 //        NotificationCenter.default.addObserver(
@@ -145,18 +151,19 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                     
                     if(pLabel == nil) {
                         //print("nil")
+                        nome = nomeGiven + " " + indexCountNumber.description
                         
                     }else if (pLabel?.characters.contains(character))!{
                         
                        // print("\(pLabel) contains \(character).")
                         let pLabel2 = pLabel?.characters.split(separator: "<").map(String.init)
                         let pLabel3 = pLabel2?[1].characters.split(separator: ">").map(String.init) //[Mobile, >!$_]
-                        nome = nomeGiven + " " + (pLabel3?[0])!
+                        nome = nomeGiven + " " + (pLabel3?[0])! + " " + indexCountNumber.description
 
                     }else{
                         
                        // print("\(pLabel) doesn't contain \(character).")
-                        nome = nomeGiven + " " + pLabel!
+                        nome = nomeGiven + " " + pLabel! + " " + indexCountNumber.description
                         
                     }
                 }
@@ -232,7 +239,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     
     func filtrando(_ letra1:Character,letra2:Character,letra3:Character,letra4:Character,letra5:Character,letra6:Character){
         
-        if(filteredObjectsName == []){
+        if(filteredObjectsName == [] && filtro == 0 ){
             for item in arrayOfNames {
                 
                 let strCharactersArray = Array(item.characters)
@@ -277,7 +284,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     
     func filtrando2(_ letra1:Character,letra2:Character,letra3:Character,letra4:Character,letra5:Character,letra6:Character,letra7:Character,letra8:Character){
         
-        if(filteredObjectsName == []){
+        if(filteredObjectsName == [] && filtro == 0){
             
             for item in arrayOfNames {
                 
@@ -394,7 +401,9 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         case 1:
             print("Digitei 1")
             digitei = digitei + "1"
-            tableViewContacts.isHidden = true
+            filteredObjectsName = []
+            filtro = 1
+            //tableViewContacts.isHidden = true
 
             break
         case 2:
@@ -474,7 +483,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     
     @IBAction func deleteButton(_ sender: AnyObject) {
         print("entrei em funcao delete")
-        
+        filtro = 0
         let strCharactersArray = Array(digitei.characters)
         var index : Int = 0
         var stringChar:[Character] = []
