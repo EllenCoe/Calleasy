@@ -39,9 +39,12 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     
     var arrayOfNames:[String]=[]
     
+    @IBOutlet weak var deleteButtonImage: UIButton!
     var numberContact :String = ""
     
     @IBOutlet weak var numberLabel: UILabel!
+
+    
     
     var contactStore = CNContactStore()
     
@@ -55,6 +58,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         numberLabel.text = ""
+        deleteButtonImage.isHidden = true
         //print("entrei no did load ")
         self.askForContactAccess()
         tableViewContacts.isHidden = true
@@ -92,6 +96,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
 
     }
     override func viewDidAppear(_ animated: Bool) {
+        
         //print("entrei no did appear ")
 //        NotificationCenter.default.addObserver(
 //            self,
@@ -253,6 +258,9 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     
     @IBAction func funcButtons(_ sender: AnyObject) {
         self.tableViewContacts.isHidden = false
+        
+        deleteButtonImage.isHidden = false
+        
         filtrandoNumeroDigitado(numeroInt: sender.tag)
         
         
@@ -555,6 +563,9 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
         numberLabel.text = digitei
         tableViewContacts.isHidden = false
+        if(digitei == ""){
+            deleteButtonImage.isHidden = true
+            }
         tableViewContacts.reloadData()
         
         //**** Ajuda Francisco ***
