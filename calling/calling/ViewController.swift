@@ -72,6 +72,9 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func infoButton(_ sender: Any) {
+    performSegue(withIdentifier: "infoSegue", sender: .none )
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(scrollView == tableViewContacts && filteredObjectsName != []){
             
@@ -79,7 +82,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             print("contentOffset: ", contentOffset)
             
             if(filteredObjectsName.count > 6){
-                performSegue(withIdentifier: "contactsListSegue", sender: .none )}
+                performSegue(withIdentifier: "contaSeguectsList", sender: .none )}
        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
