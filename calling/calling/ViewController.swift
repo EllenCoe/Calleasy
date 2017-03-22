@@ -82,7 +82,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             print("contentOffset: ", contentOffset)
             
             if(filteredObjectsName.count > 6){
-                performSegue(withIdentifier: "contaSeguectsList", sender: .none )}
+                performSegue(withIdentifier: "contactsListSegue, sender: .none )}
        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
