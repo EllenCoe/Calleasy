@@ -30,7 +30,7 @@ class ContactStructModel{
     
 }
 
-class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDelegate,UITableViewDelegate {
+class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDelegate,UITableViewDelegate{
     @IBOutlet weak var tableViewContacts: UITableView!
     
     var filteredObjectsName: [String] = []
@@ -55,7 +55,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         numberLabel.text = ""
-        print("entrei no did load ")
+        //print("entrei no did load ")
         self.askForContactAccess()
         tableViewContacts.isHidden = true
                 NotificationCenter.default.addObserver(
@@ -69,12 +69,30 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if(scrollView == tableViewContacts){
+        if(scrollView == tableViewContacts && filteredObjectsName != []){
             
+            let contentOffset = scrollView.contentOffset.y
+            print("contentOffset: ", contentOffset)
+            
+            if(filteredObjectsName.count > 6){
+                performSegue(withIdentifier: "contactsListSegue", sender: .none )}
+       }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var data : [String];
+        
+        data = filteredObjectsName
+        
+       if(segue.identifier == "contactsListSegue"){
+            (segue.destination as! ListContactView).data = data
+        
+        (segue.destination as! ListContactView).allContactList = contactsStruct
+    
         }
+
     }
     override func viewDidAppear(_ animated: Bool) {
-        print("entrei no did appear ")
+        //print("entrei no did appear ")
 //        NotificationCenter.default.addObserver(
 //            self,
 //            selector:#selector(ViewController.getContacts),
@@ -82,7 +100,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
 //            object: nil)
     }
     func getContacts() {
-        print("entrei na funçao get contacts")
+        //print("entrei na funçao get contacts")
         //self.askForContactAccess()
         contactsStruct = []
         arrayOfNames = []
@@ -91,12 +109,12 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
         let contacts: [CNContact] = {
             let contactStore = CNContactStore()
-            let keysToFetch = [
+            let keysToFetch = CNContactViewController.descriptorForRequiredKeys() /*[
                 CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
                 CNContactEmailAddressesKey,
                 CNContactPhoneNumbersKey,
                 CNContactImageDataAvailableKey,
-                CNContactThumbnailImageDataKey] as [Any]
+                CNContactThumbnailImageDataKey] as [Any]*/
             
             // Get all the containers
            
@@ -114,7 +132,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
                 
                 do {
-                    let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
+                    let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: [keysToFetch] /*as! [CNKeyDescriptor]*/)
                     results.append(contentsOf: containerResults)
                 } catch {
                     print("Error fetching results for container")
@@ -137,7 +155,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             var numero = "Número não encontrado";
             var indexCountNumber = 0;
             
-            print("NUMERO DE CONTATOS POR CONTATO",countOfNumber)
+            //print("NUMERO DE CONTATOS POR CONTATO",countOfNumber)
             
             while(countOfNumber > 0 && indexCountNumber < countOfNumber){
                 
@@ -172,7 +190,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                     let contato = ContactStructModel(name:nome,number: numero)
                     
                     self.contactsStruct.append(contato)
-                    print("Contato " + String(index) + " " + contactsStruct[index].name + " " + contactsStruct[index].number)
+                    //print("Contato " + String(index) + " " + contactsStruct[index].name + " " + contactsStruct[index].number)
                     //print(contactsStruct[index].number)
                     index = index + 1;
                 }
@@ -193,7 +211,11 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             }
         }
         
+        
+        self.contactsForTesting = contacts
     }
+    
+    var contactsForTesting : [CNContact]?
     
     func askForContactAccess() {
         let authorizationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
@@ -252,7 +274,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 
                 filtro = 1
             }
-            print(filteredObjectsName)
+            //print(filteredObjectsName)
         }else{
             
             for item in filteredObjectsName {
@@ -271,14 +293,15 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 }}
             filtro = filtro + 1
             // print("filtro",filtro)
-            print(filteredObjectsName)
+            //print(filteredObjectsName)
         }
+        
         if(filteredObjectsName.count == 0){
-            print(filteredObjectsName)
+            //print(filteredObjectsName)
             
             print("nenhum resultado encontrado")}
         
-        
+        print(filteredObjectsName)
         
     }
     
@@ -359,6 +382,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         selectedName = true
         
         if(filteredObjectsName != []){
+            
             for contato in contactsStruct{
                 if(contato.name == filteredObjectsName[indexPath.row]){
                     numberContact = contato.number
@@ -480,9 +504,20 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
         
     }
+    @IBAction func ListContactButton(_ sender: Any) {
+        let contactPickerViewController = CNContactPickerViewController()
+        contactPickerViewController.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0",
+                                                                              argumentArray: nil)
+        
+        contactPickerViewController.delegate = self
+
+        
+        self.navigationController?.pushViewController(contactPickerViewController, animated: true)
+               present(contactPickerViewController, animated: true, completion: nil)
+    }
     
     @IBAction func deleteButton(_ sender: AnyObject) {
-        print("entrei em funcao delete")
+        //print("entrei em funcao delete")
         filtro = 0
         let strCharactersArray = Array(digitei.characters)
         var index : Int = 0
@@ -498,7 +533,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                 
                 if(index < (strCharactersArray.count - 1)) {
                     stringChar.append(item)
-                    print(item)
+                    //print(item)
                     //************ Ajeitar esse erro depois!!! *********
                     numeroDigitadoInteiro = Int(String(item))!
                     
@@ -514,14 +549,30 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
         digitei = stringNumber
         
-        print("O que eu havia digitado",digitei)
+        //print("O que eu havia digitado",digitei)
         
-        print("Objetos filtrados",filteredObjectsName)
+        //print("Objetos filtrados",filteredObjectsName)
         
         numberLabel.text = digitei
         tableViewContacts.isHidden = false
         tableViewContacts.reloadData()
         
+        //**** Ajuda Francisco ***
+//        if let cont = contactsForTesting?.first {
+//            //
+//            //            cnvc.
+//
+//            
+//            DispatchQueue.main.async {
+//                
+//                let newContact = CNMutableContact()
+//                newContact.givenName = "Testando"
+//                newContact.familyName = "O App"
+//                
+//                //let cnvc = CNContactViewController(forNewContact: newContact)
+//             // self.present(cnvc, animated: true, completion: nil)
+//           }
+//        }
     }
 }
 
