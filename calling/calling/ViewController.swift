@@ -43,8 +43,6 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     var numberContact :String = ""
     
     @IBOutlet weak var numberLabel: UILabel!
-
-    
     
     var contactStore = CNContactStore()
     
@@ -67,7 +65,13 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                     selector:#selector(ViewController.getContacts),
                     name: NSNotification.Name.UIApplicationDidBecomeActive,
                     object: nil)
-    
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.Tap))  //Tap function will call when user tap on button
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.Long)) //Long function will call when user long press on button.
+        tapGesture.numberOfTapsRequired = 1
+        
+        deleteButtonImage.addGestureRecognizer(tapGesture)
+        deleteButtonImage.addGestureRecognizer(longGesture)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -81,7 +85,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
             let contentOffset = scrollView.contentOffset.y
             print("contentOffset: ", contentOffset)
             
-            if(filteredObjectsName.count > 6){
+            if(filteredObjectsName.count > 10){
                 performSegue(withIdentifier: "contactsListSegue", sender: .none )}
        }
     }
@@ -98,18 +102,9 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         }
 
     }
-    override func viewDidAppear(_ animated: Bool) {
-        
-        //print("entrei no did appear ")
-//        NotificationCenter.default.addObserver(
-//            self,
-//            selector:#selector(ViewController.getContacts),
-//            name: NSNotification.Name.UIApplicationDidBecomeActive,
-//            object: nil)
-    }
+
     func getContacts() {
-        //print("entrei na funçao get contacts")
-        //self.askForContactAccess()
+       
         contactsStruct = []
         arrayOfNames = []
         filteredObjectsName = []
@@ -117,14 +112,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
         let contacts: [CNContact] = {
             let contactStore = CNContactStore()
-            let keysToFetch = CNContactViewController.descriptorForRequiredKeys() /*[
-                CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
-                CNContactEmailAddressesKey,
-                CNContactPhoneNumbersKey,
-                CNContactImageDataAvailableKey,
-                CNContactThumbnailImageDataKey] as [Any]*/
-            
-            // Get all the containers
+            let keysToFetch = CNContactViewController.descriptorForRequiredKeys()
            
             var allContainers: [CNContainer] = []
             do {
@@ -158,6 +146,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         for contactOfCell in contacts {
             
             let nomeGiven = contactOfCell.givenName
+            let lastName = contactOfCell.middleName
             var nome = nomeGiven
             let countOfNumber = contactOfCell.phoneNumbers.count
             var numero = "Número não encontrado";
@@ -177,19 +166,19 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                     
                     if(pLabel == nil) {
                         //print("nil")
-                        nome = nomeGiven + " " + indexCountNumber.description
+                        nome = nomeGiven + " " + lastName + " " + indexCountNumber.description
                         
                     }else if (pLabel?.characters.contains(character))!{
                         
                        // print("\(pLabel) contains \(character).")
                         let pLabel2 = pLabel?.characters.split(separator: "<").map(String.init)
                         let pLabel3 = pLabel2?[1].characters.split(separator: ">").map(String.init) //[Mobile, >!$_]
-                        nome = nomeGiven + " " + (pLabel3?[0])! + " " + indexCountNumber.description
+                        nome = nomeGiven + " " + lastName + " " + (pLabel3?[0])! + " " + indexCountNumber.description
 
                     }else{
                         
                        // print("\(pLabel) doesn't contain \(character).")
-                        nome = nomeGiven + " " + pLabel! + " " + indexCountNumber.description
+                        nome = nomeGiven + " " + lastName + " " + pLabel! + " " + indexCountNumber.description
                         
                     }
                 }
@@ -527,49 +516,88 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                present(contactPickerViewController, animated: true, completion: nil)
     }
     
-    @IBAction func deleteButton(_ sender: AnyObject) {
-        //print("entrei em funcao delete")
+    @IBAction func plusContact(_ sender: Any) {
+        
+        
+        
+    }
+    
+    func Tap() {
+        
+        print("Tap happend")
+        
         filtro = 0
-        let strCharactersArray = Array(digitei.characters)
+        
         var index : Int = 0
-        var stringChar:[Character] = []
+        
         var numeroDigitadoInteiro : Int
         
+        numberLabel.text = ""
+        
         filteredObjectsName = []
-        //while index < (strCharactersArray.count - 1)
+        
+        for scalar in digitei.unicodeScalars {
+            let value = scalar.value
+            if (value <= 48 && value >= 57){
+                let arrayDigitei = Array(digitei.characters)
+                var lastDigitei : String = ""
+                var index2 : Int = 0
+                
+                for caracter in arrayDigitei{
+                    if(index2 < (arrayDigitei.count - 1)) {
+                        lastDigitei.append(caracter)
+                        index2 = index2 + 1
+                    }
+                }
+            }
+        }
+        
+        let phone = digitei.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+        
+        let strCharactersArray = Array(phone.characters)
         
         digitei = ""
-        if(selectedName == false){
-            for item in strCharactersArray{
+        
+        for item in strCharactersArray{
+            
+            if(index < (strCharactersArray.count - 1)) {
                 
-                if(index < (strCharactersArray.count - 1)) {
-                    stringChar.append(item)
-                    //print(item)
-                    //************ Ajeitar esse erro depois!!! *********
-                    numeroDigitadoInteiro = Int(String(item))!
-                    
-                    filtrandoNumeroDigitado(numeroInt: numeroDigitadoInteiro)
-                    //numberLabel.text = digitei
-                    
-                    index = index + 1
-                }
+                numeroDigitadoInteiro = Int(String(item))!
+                print(numeroDigitadoInteiro)
                 
-            }}
+                filtrandoNumeroDigitado(numeroInt: numeroDigitadoInteiro)
+                
+                index = index + 1
+            }
+        }
         
-        let stringNumber = String(stringChar)
         
-        digitei = stringNumber
-        
-        //print("O que eu havia digitado",digitei)
-        
-        //print("Objetos filtrados",filteredObjectsName)
-        
-        numberLabel.text = digitei
         tableViewContacts.isHidden = false
+        
         if(digitei == ""){
             deleteButtonImage.isHidden = true
-            }
+        }
         tableViewContacts.reloadData()
+    }
+    
+    func Long() {
+        
+        print("Long press")
+        filtro = 0
+        digitei = ""
+        numberLabel.text = ""
+        
+        filteredObjectsName = []
+        tableViewContacts.isHidden = true
+        tableViewContacts.reloadData()
+        
+        
+    }
+    @IBAction func deleteButton(_ sender: AnyObject) {
+        //print("entrei em funcao delete")
+        
+        // Add a target to your button
+        
         
         //**** Ajuda Francisco ***
 //        if let cont = contactsForTesting?.first {
@@ -588,5 +616,6 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
 //           }
 //        }
     }
+    
 }
 

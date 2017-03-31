@@ -14,7 +14,7 @@ class ListContactView : UIViewController,UITableViewDelegate,UITableViewDataSour
     
     @IBOutlet weak var tableViewAllContact: UITableView!
     
-     var array:[String]=["1","2","3","4","5","6","7","8","9","20"]
+    
     var  data :[String]?
     var allContactList :[ContactStructModel]?
     
@@ -36,7 +36,7 @@ class ListContactView : UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return array.count
+        return data!.count
     }
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

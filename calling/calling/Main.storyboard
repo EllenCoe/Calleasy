@@ -563,7 +563,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUy-Xg-OUZ">
-                                        <rect key="frame" x="74.5" y="0.0" width="225" height="54"/>
+                                        <rect key="frame" x="75" y="0.0" width="225" height="54"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Info">
                                                 <attributes>
@@ -576,7 +576,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frf-8D-myM">
-                                        <rect key="frame" x="16" y="8.5" width="37.5" height="37.5"/>
+                                        <rect key="frame" x="16" y="8" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="frf-8D-myM" secondAttribute="height" multiplier="1:1" id="vUd-Ka-GN3"/>
                                         </constraints>
@@ -598,16 +598,18 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-YF-poi">
-                                <rect key="frame" x="132" y="646" width="42" height="21"/>
+                                <rect key="frame" x="98" y="642" width="203" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Label">
+                                    <fragment content="Programming | Hugo Xavier ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -625,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vZ-v3-mOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="932"/>
+            <point key="canvasLocation" x="1581.5999999999999" y="931.48425787106453"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="HgA-EK-SIs">
