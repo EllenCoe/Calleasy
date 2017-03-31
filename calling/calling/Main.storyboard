@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -216,7 +216,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBA-hi-ATf" id="Idp-4c-gkj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka2-uH-e54">
@@ -252,7 +252,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxk-9x-goq">
-                                <rect key="frame" x="312" y="214" width="38" height="49"/>
+                                <rect key="frame" x="312" y="217" width="34" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="1"/>
                                 <constraints>
@@ -437,6 +437,20 @@
                                     <segue destination="zXs-9e-EJo" kind="show" identifier="infoSegue" animates="NO" id="O8m-0B-lK4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f08-JH-s2U">
+                                <rect key="frame" x="31.5" y="219" width="39" height="39"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="f08-JH-s2U" secondAttribute="height" multiplier="1:1" id="GOD-dO-k0F"/>
+                                </constraints>
+                                <color key="tintColor" red="0.61762452125549316" green="0.45412707328796387" blue="0.87328100204467773" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addContacAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uhz-gi-bo2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99276253172588835" green="0.99276253172588835" blue="0.99276253172588835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -448,6 +462,7 @@
                             <constraint firstItem="8Pa-TN-hjQ" firstAttribute="width" secondItem="868-s9-4vN" secondAttribute="width" multiplier="0.1" id="2We-vs-YVn"/>
                             <constraint firstItem="8Pa-TN-hjQ" firstAttribute="leading" secondItem="H4Q-u7-hKW" secondAttribute="trailing" multiplier="1.05" id="2lg-sw-rqP"/>
                             <constraint firstItem="TRe-46-hjI" firstAttribute="height" secondItem="XFO-qV-hhi" secondAttribute="height" id="3PU-pC-2XV"/>
+                            <constraint firstItem="f08-JH-s2U" firstAttribute="trailing" secondItem="GkX-5p-Qqv" secondAttribute="leading" multiplier="1.5" id="3SV-T3-u0n"/>
                             <constraint firstItem="H7c-b6-mSA" firstAttribute="centerX" secondItem="txu-aK-ARh" secondAttribute="centerX" id="4hx-To-75f"/>
                             <constraint firstItem="rMa-db-Xef" firstAttribute="centerY" secondItem="txu-aK-ARh" secondAttribute="centerY" id="5RQ-6v-7Ma"/>
                             <constraint firstItem="H4Q-u7-hKW" firstAttribute="width" secondItem="wCU-pE-Vak" secondAttribute="width" id="5gn-eL-oJB"/>
@@ -455,7 +470,7 @@
                             <constraint firstItem="LYn-M3-lRz" firstAttribute="centerX" secondItem="rMa-db-Xef" secondAttribute="centerX" id="7Yr-IA-aMS"/>
                             <constraint firstItem="H4Q-u7-hKW" firstAttribute="height" secondItem="wCU-pE-Vak" secondAttribute="height" id="7qQ-Mx-Wpu"/>
                             <constraint firstItem="8mS-9D-d2f" firstAttribute="top" secondItem="TRe-46-hjI" secondAttribute="bottom" multiplier="1.02" id="8yU-UE-1G0"/>
-                            <constraint firstItem="dxk-9x-goq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.1" id="98N-X7-3mn"/>
+                            <constraint firstItem="dxk-9x-goq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.09" id="98N-X7-3mn"/>
                             <constraint firstItem="H4Q-u7-hKW" firstAttribute="centerX" secondItem="wCU-pE-Vak" secondAttribute="centerX" id="9OE-8p-0Az"/>
                             <constraint firstItem="PPZ-1m-agA" firstAttribute="width" secondItem="Oef-Dz-nrp" secondAttribute="width" id="APd-Ex-TtL"/>
                             <constraint firstItem="H7c-b6-mSA" firstAttribute="height" secondItem="txu-aK-ARh" secondAttribute="height" id="FNL-rI-kKX"/>
@@ -485,9 +500,11 @@
                             <constraint firstItem="yPx-mO-Udw" firstAttribute="width" secondItem="mbd-VJ-iea" secondAttribute="width" id="VHR-a0-7G7"/>
                             <constraint firstItem="Oef-Dz-nrp" firstAttribute="centerX" secondItem="H7c-b6-mSA" secondAttribute="centerX" id="Vr9-k2-8lp"/>
                             <constraint firstItem="mbd-VJ-iea" firstAttribute="top" secondItem="LYn-M3-lRz" secondAttribute="bottom" multiplier="1.02" id="W30-er-h81"/>
+                            <constraint firstItem="f08-JH-s2U" firstAttribute="height" secondItem="GkX-5p-Qqv" secondAttribute="height" id="WaT-t7-gMn"/>
                             <constraint firstItem="868-s9-4vN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XTW-C7-1pE"/>
                             <constraint firstItem="8Pa-TN-hjQ" firstAttribute="top" secondItem="H4Q-u7-hKW" secondAttribute="top" id="YMR-Xc-eDu"/>
                             <constraint firstItem="gVM-0l-9kc" firstAttribute="bottom" secondItem="LYn-M3-lRz" secondAttribute="bottom" multiplier="0.98" id="Ylc-rf-9w6"/>
+                            <constraint firstItem="f08-JH-s2U" firstAttribute="centerY" secondItem="GkX-5p-Qqv" secondAttribute="centerY" id="Ywc-CJ-d1Y"/>
                             <constraint firstItem="LYn-M3-lRz" firstAttribute="width" secondItem="rMa-db-Xef" secondAttribute="width" id="ZEZ-62-qVw"/>
                             <constraint firstItem="yPx-mO-Udw" firstAttribute="centerX" secondItem="mbd-VJ-iea" secondAttribute="centerX" id="ZzG-fP-oh4"/>
                             <constraint firstItem="E5c-X5-mzp" firstAttribute="width" secondItem="8mS-9D-d2f" secondAttribute="width" id="a0B-v4-seu"/>
@@ -534,6 +551,7 @@
                     <tabBarItem key="tabBarItem" title="Keyboard" image="menu-circles" id="ndF-sg-Gzb"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="addContactButton" destination="f08-JH-s2U" id="eDi-Z0-ei2"/>
                         <outlet property="deleteButtonImage" destination="dxk-9x-goq" id="KAv-Od-e2z"/>
                         <outlet property="numberLabel" destination="GkX-5p-Qqv" id="nde-qT-Tfq"/>
                         <outlet property="tableViewContacts" destination="5vI-lu-zGJ" id="4PF-7U-ha1"/>
@@ -654,7 +672,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ROe-yT-JwG" id="Qe7-i5-0wQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9F-CE-ZKF">

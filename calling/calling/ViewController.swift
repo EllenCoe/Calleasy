@@ -30,7 +30,7 @@ class ContactStructModel{
     
 }
 
-class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDelegate,UITableViewDelegate{
+class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDelegate,UITableViewDelegate,CNContactViewControllerDelegate{
     @IBOutlet weak var tableViewContacts: UITableView!
     
     var filteredObjectsName: [String] = []
@@ -39,6 +39,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
     
     var arrayOfNames:[String]=[]
     
+    @IBOutlet weak var addContactButton: UIButton!
     @IBOutlet weak var deleteButtonImage: UIButton!
     var numberContact :String = ""
     
@@ -57,6 +58,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         super.viewDidLoad()
         numberLabel.text = ""
         deleteButtonImage.isHidden = true
+        addContactButton.isHidden = true
         //print("entrei no did load ")
         self.askForContactAccess()
         tableViewContacts.isHidden = true
@@ -252,6 +254,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         self.tableViewContacts.isHidden = false
         
         deleteButtonImage.isHidden = false
+        addContactButton.isHidden = false
         
         filtrandoNumeroDigitado(numeroInt: sender.tag)
         
@@ -516,11 +519,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
                present(contactPickerViewController, animated: true, completion: nil)
     }
     
-    @IBAction func plusContact(_ sender: Any) {
-        
-        
-        
-    }
+    
     
     func Tap() {
         
@@ -576,6 +575,7 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
         if(digitei == ""){
             deleteButtonImage.isHidden = true
+            addContactButton.isHidden = true
         }
         tableViewContacts.reloadData()
     }
@@ -593,29 +593,19 @@ class ViewController: UIViewController,UITableViewDataSource, CNContactPickerDel
         
         
     }
-    @IBAction func deleteButton(_ sender: AnyObject) {
-        //print("entrei em funcao delete")
-        
-        // Add a target to your button
-        
-        
-        //**** Ajuda Francisco ***
-//        if let cont = contactsForTesting?.first {
-//            //
-//            //            cnvc.
-//
-//            
-//            DispatchQueue.main.async {
-//                
-//                let newContact = CNMutableContact()
-//                newContact.givenName = "Testando"
-//                newContact.familyName = "O App"
-//                
-//                //let cnvc = CNContactViewController(forNewContact: newContact)
-//             // self.present(cnvc, animated: true, completion: nil)
-//           }
-//        }
+    
+    
+    
+    @IBAction func addContacAction(_ sender: Any) {
+        let controller = CNContactViewController(forNewContact:nil)
+        controller.delegate = self
+        let navigationController = UINavigationController(rootViewController: controller)
+        self.present(navigationController, animated: true)
     }
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        viewController.navigationController?.dismiss(animated: true)
+    }
+   
     
 }
 
